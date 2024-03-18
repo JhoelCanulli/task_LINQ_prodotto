@@ -73,9 +73,8 @@ namespace task_prodotti
             }
             */
             #endregion
-            /*
             #region QUANTITA PRODOTTO E VALORE NEGOZIO
-            
+            /*          
             int somma_quantita;
             float prezzo_totale = 0;
             int somma_totale = 0;
@@ -98,8 +97,8 @@ namespace task_prodotti
                 Console.WriteLine($" quantita : {somma_quantita}\n");
             }
             Console.WriteLine($"valore negozio : prezzo = {prezzo_totale} x quantita = {somma_totale} = {prezzo_totale*somma_totale}");
-            #endregion
             */
+            #endregion
         }
     }
 }
