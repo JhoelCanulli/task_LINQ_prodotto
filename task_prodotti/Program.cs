@@ -71,32 +71,16 @@ namespace task_prodotti
                 }
                 Console.WriteLine($"quantita : {somma_quantita}\n");
             }
+
             */
             #endregion
-            #region QUANTITA PRODOTTO E VALORE NEGOZIO
             /*
-            int somma_quantita;
-            float prezzo_totale = 0;
-            float somma_totale = 0;
-            var risultato = from oggetto in elenco
-                            group oggetto by oggetto.Categoria into contenitoreGenere
-                            select contenitoreGenere;
-
-            foreach (var genere in risultato)
-            {
-                somma_quantita = 0;
-                
-                Console.WriteLine(genere.Key);
-                foreach (Prodotto p in genere)
-                {
-                    Console.WriteLine(p.stampaProdotto());
-                    somma_quantita = somma_quantita + p.Quantita;
-                    somma_totale = somma_totale + somma_quantita;
-                    prezzo_totale = prezzo_totale + p.Prezzo;
-                }
-                Console.WriteLine($" quantita : {somma_quantita}\n");
-            }
-            Console.WriteLine($"valore negozio : prezzo = {prezzo_totale} x quantita = {somma_totale} = {prezzo_totale*somma_totale}");
+            #region QUANTITA PRODOTTO E VALORE NEGOZIO
+           
+            var total = from prod in elenco
+                        where prod.Quantita > 0
+                        select new { prod.Prezzo, prod.Quantita };
+            Console.WriteLine(total.Sum(p => p.Quantita * p.Prezzo));
             */
             #endregion
         }
