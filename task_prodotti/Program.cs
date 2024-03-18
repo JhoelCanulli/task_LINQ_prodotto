@@ -33,16 +33,13 @@ namespace task_prodotti
             #region PRODOTTI PER CATEGORIA
             /*
             var risultato = from oggetto in elenco
-                            group oggetto by oggetto.Categoria into contenitoreGenere
-                            select contenitoreGenere;
-
-            foreach (var genere in risultato)
+                            where oggetto.Categoria == "Cartoleria"
+                            select oggetto;
+            
+            // var risultato = elenco.Where(p => p.Categoria == "Cartoleria"); -> versione alternativa
+            foreach (var p in risultato)
             {
-                Console.WriteLine(genere.Key);
-                foreach (Prodotto p in genere)
-                {
-                    Console.WriteLine(p.stampaProdotto());
-                }
+                Console.WriteLine(p.stampaProdotto());
             }
             */
             #endregion
@@ -76,10 +73,11 @@ namespace task_prodotti
             }
             */
             #endregion
-
-            #region QUANTITA PRODOTTO E VALORE NEGOZIO
             /*
+            #region QUANTITA PRODOTTO E VALORE NEGOZIO
+            
             int somma_quantita;
+            float prezzo_totale = 0;
             int somma_totale = 0;
             var risultato = from oggetto in elenco
                             group oggetto by oggetto.Categoria into contenitoreGenere
@@ -88,18 +86,20 @@ namespace task_prodotti
             foreach (var genere in risultato)
             {
                 somma_quantita = 0;
+                
                 Console.WriteLine(genere.Key);
                 foreach (Prodotto p in genere)
                 {
                     Console.WriteLine(p.stampaProdotto());
                     somma_quantita = somma_quantita + p.Quantita;
                     somma_totale = somma_totale + somma_quantita;
+                    prezzo_totale = prezzo_totale + p.Prezzo;
                 }
                 Console.WriteLine($" quantita : {somma_quantita}\n");
             }
-            Console.WriteLine($"valore negozio : {somma_totale}");
-            */
+            Console.WriteLine($"valore negozio : prezzo = {prezzo_totale} x quantita = {somma_totale} = {prezzo_totale*somma_totale}");
             #endregion
+            */
         }
     }
 }
