@@ -74,10 +74,10 @@ namespace task_prodotti
             */
             #endregion
             #region QUANTITA PRODOTTO E VALORE NEGOZIO
-            /*          
+            /*
             int somma_quantita;
             float prezzo_totale = 0;
-            int somma_totale = 0;
+            float somma_totale = 0;
             var risultato = from oggetto in elenco
                             group oggetto by oggetto.Categoria into contenitoreGenere
                             select contenitoreGenere;
