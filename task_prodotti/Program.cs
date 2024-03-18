@@ -77,7 +77,10 @@ namespace task_prodotti
             */
             #endregion
 
+            #region QUANTITA PRODOTTO E VALORE NEGOZIO
+            /*
             int somma_quantita;
+            int somma_totale = 0;
             var risultato = from oggetto in elenco
                             group oggetto by oggetto.Categoria into contenitoreGenere
                             select contenitoreGenere;
@@ -90,9 +93,13 @@ namespace task_prodotti
                 {
                     Console.WriteLine(p.stampaProdotto());
                     somma_quantita = somma_quantita + p.Quantita;
+                    somma_totale = somma_totale + somma_quantita;
                 }
-                Console.WriteLine($"quantita : {somma_quantita}\n");
+                Console.WriteLine($" quantita : {somma_quantita}\n");
             }
+            Console.WriteLine($"valore negozio : {somma_totale}");
+            */
+            #endregion
         }
     }
 }
